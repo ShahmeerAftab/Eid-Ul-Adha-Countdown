@@ -1,10 +1,11 @@
-// Eid ul Adha ki date set karein (2024 mein 17 June hai)
-// Har second countdown update hoga
-// Abhi ka time
-// Eid tak kitna time bacha hai?
-// Agar Eid aa chuki hai
-// Time ko days, hours, minutes, seconds mein calculate karein
-// HTML mein show karein
+// .........................Steps to Follow....................
+// 1) Set date of Eid ul Adha (june 7, 2025)
+// 2) Countdown update in every  second 
+// 3) current time
+// 4) Find remaining days in eid
+// 5) If Eid is over
+// 6) Calculate Time in days, hours, minutes and seconds 
+// 7) Show in HTML 
 
 
 const eidDate = new Date("june 7, 2025").getTime();
