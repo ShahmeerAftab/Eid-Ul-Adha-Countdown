@@ -6,30 +6,39 @@
 // Time ko days, hours, minutes, seconds mein calculate karein
 // HTML mein show karein
 
-const eidDate = new Date("June 7, 2025").getTime();
 
-const interval=setInterval(() => {
-    const currentTime = new Date().getTime();
-    const leftTime = eidDate - currentTime;
-    console.log(leftTime);
+const eidDate = new Date("june 7, 2025").getTime();
+console.log(eidDate);
 
-    if (leftTime < 0) {
-        clearInterval(interval);
-        document.querySelector(".mainCont").innerHTML = "Eid Mubarak";
+const updateCountDown = setInterval(() => {
+    const currentDate = new Date().getTime();
+    const remainingDaysInEid = eidDate - currentDate;
+    console.log(remainingDaysInEid);
+    if (remainingDaysInEid < 0) {
+        clearInterval(updateCountDown);
+        document.querySelector(".mainCont").innerHTML =
+            `<h1 style="color: gold; font-size: 4rem; text-align: center;
+          background-color: green; padding: 20px; border-radius: 10px;">
+          Eid Mubarak!
+        </h1>`;
         return;
     }
 
-    const days = Math.floor(leftTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((leftTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((leftTime % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((leftTime % (1000 * 60)) / 1000);
+    const days = Math.floor(remainingDaysInEid / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingDaysInEid % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingDaysInEid % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingDaysInEid % (1000 * 60)) / 1000);
 
     document.querySelector(".days").textContent=days
-document.querySelector(".hours").textContent=hours
-document.querySelector(".minutes").textContent=minutes
-document.querySelector(".seconds").textContent=seconds
+    document.querySelector(".hours ").textContent=hours
+    document.querySelector(".minutes").textContent=minutes
+    document.querySelector(".seconds").textContent=seconds
 
 }, 1000);
+
+
+
+
 
 
 
